@@ -28,9 +28,21 @@ repositories {
 	maven { url = "https://maven.terraformersmc.com/releases/" } // Mod Menu
 	maven { url = "https://mvn.devos.one/snapshots/" } // Create, Porting Lib, Forge Tags, Milk Lib, Registrate
 	maven { url = "https://cursemaven.com" } // Forge Config API Port
-	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+	maven {
+		url = "https://maven.jamieswhiteshirt.com/libs-release"
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
+	} // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.tterrag.com/" } // Flywheel
+	maven { url = "https://ladysnake.jfrog.io/artifactory/mods" }
+	maven {
+		url = 'https://maven.cafeteria.dev'
+		content {
+			includeGroup 'net.adriantodt.fabricmc'
+		}
+	}
 }
 
 dependencies {
@@ -45,6 +57,7 @@ dependencies {
 
 	// dependencies
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_api_version}")
+	modImplementation("com.github.eggohito:origins-fabric:v${origins_version}") // see https://ptb.discord.com/channels/734127708488859831/838871885709705237/1054040715396644975
 
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
@@ -78,6 +91,7 @@ processResources {
 	properties.put("fabric_api_version", fabric_api_version)
 	properties.put("create_version", create_version)
 	properties.put("minecraft_version", minecraft_version)
+	properties.put("origins_version", origins_version)
 
 	properties.forEach((k, v) -> inputs.property(k, v))
 
