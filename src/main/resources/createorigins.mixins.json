@@ -4,6 +4,7 @@
   "package": "dev.igalaxy.createorigins.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CopperBacktankArmorLayerMixin",
     "DivingHelmetItemMixin"
   ],
   "client": [
