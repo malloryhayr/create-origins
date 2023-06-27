@@ -2,7 +2,7 @@ package dev.igalaxy.createorigins;
 
 import com.simibubi.create.Create;
 
-import com.simibubi.create.content.contraptions.goggles.GogglesItem;
+import com.simibubi.create.content.equipment.goggles.GogglesItem;
 
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;

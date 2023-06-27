@@ -1,6 +1,6 @@
 package dev.igalaxy.createorigins.mixin;
 
-import com.simibubi.create.content.curiosities.armor.DivingHelmetItem;
+import com.simibubi.create.content.equipment.armor.DivingHelmetItem;
 
 import io.github.apace100.origins.power.OriginsPowerTypes;
 import net.minecraft.tags.TagKey;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(DivingHelmetItem.class)
 public class DivingHelmetItemMixin {
-	@Redirect(method = "breatheUnderwater", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isEyeInFluid(Lnet/minecraft/tags/TagKey;)Z", ordinal = 1))
+	@Redirect(method = "breatheUnderwater", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isEyeInFluid(Lnet/minecraft/tags/TagKey;)Z"))
 	private static boolean modifyBreatheUnderwater(LivingEntity instance, TagKey tagKey) {
 		if (OriginsPowerTypes.WATER_BREATHING.isActive(instance)) {
 			return !instance.isEyeInFluid(tagKey);
