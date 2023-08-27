@@ -2,7 +2,7 @@ package dev.igalaxy.createorigins;
 
 import com.simibubi.create.Create;
 
-import com.simibubi.create.content.contraptions.goggles.GogglesItem;
+import com.simibubi.create.content.equipment.goggles.GogglesItem;
 
 import io.github.apace100.apoli.power.Power;
 import io.github.apace100.apoli.power.PowerType;
@@ -25,7 +25,7 @@ public class CreateOrigins implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Create addon mod [{}] is loading alongside Create [{}]!", NAME, Create.VERSION);
 
-		GogglesItem.addIsWearingPredicate(player -> GOGGLES.isActive(player));
+		GogglesItem.addIsWearingPredicate(GOGGLES::isActive);
 	}
 
 	public static ResourceLocation id(String path) {
