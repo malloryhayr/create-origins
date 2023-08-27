@@ -5,7 +5,9 @@
   "name": "Create: Origins",
   "description": "Create compatibility for the Origins mod",
   "authors": [
-    "iGalaxy"
+    "iGalaxy (Author)",
+    "Fumple (Contributor)",
+    "EzequielDM (Contributor)"
   ],
   "contact": {
     "sources": "https://github.com/iGalaxyYT/create-origins",
